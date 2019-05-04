@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
+#include <omp.h>
 
 int fibbonacci(int);
 void k_from_n(int *end, int *start, int n, int x, int y, int *pp);
@@ -61,11 +62,11 @@ int main(int argc, char const *argv[])
 	printf("\nCalculating number of steps...\n");
 	clock_t begin = clock();
 
-	int x = 7;
-	int y = 7;
+	int x = 10;
+	int y = 10;
 	int paths = 0;
 	int steps;
- 	#pragma omp parallel for schedule(dynamic)
+ 	#pragma omp parallel for schedule(dynamic) private(steps) reduction(+:paths)
  	for (steps=1;steps<=x+y;steps++){
 		k_from_n(end, triads, steps, x, y, &paths);
 		// printf("steps = %d\n", steps);
@@ -100,7 +101,7 @@ int main(int argc, char const *argv[])
 
 void k_from_n(int *end, int *start, int n, int x, int y, int *pp){
 	
-	printf("\n-----------WITH %d STEPS----------\n", n);
+	printf("\n-----------THREAD %d: WITH %d STEPS----------\n", omp_get_thread_num(), n);
 	int *indx[n+1];
 	int p = 0;
 	int sum_x, sum_y;
@@ -183,26 +184,11 @@ void k_from_n(int *end, int *start, int n, int x, int y, int *pp){
 	    	}
 	 	 }
 	}
-	printf("Path till now = %d\n", *pp);
+	printf("Thread %d: Path till now = %d\n", omp_get_thread_num(), *pp);
 	
 }
 
 
-
-int[] loopn(int[] lo, int[] hi, int[] val, int n) {
-   int i;
-   for (i= n; i-- > 0; )
-
-   	
-   	/* MY CODE HERE */
-
-
-      if (++val[i] >= hi[i])
-         val[i]= lo[i];
-      else
-         return val;
-   return NULL;
-}
 
 
 

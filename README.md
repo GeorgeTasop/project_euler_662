@@ -5,10 +5,9 @@ Code in C for Project Euler's Problem 662
 ## How to run this code...Alexiou
 Open a terminal and run the following commands:
 
-git clone https://github.com/GeorgeTasop/project_euler_662.git
-`<addr>`
-cd project_euler_662
-make
-./prob662
+`git clone https://github.com/GeorgeTasop/project_euler_662.git`
+`cd project_euler_662`
+`make`
+`./prob662`
 
 <3 <3 <3

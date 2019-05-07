@@ -13,8 +13,8 @@ int main(int argc, char const *argv[])
 	int *ind, *end;
 	ind = triads;
 	f = fibbonacci(i);
-	//while ( f <= 8){ 	//Gia to (10,10)
-	while ( f <= 7){ 		// Gia to (3,4)
+	while ( f <= 8){ 	//Gia to (10,10)
+	//while ( f <= 7){ 		// Gia to (3,4)
 		
 		printf("Fibonacci %d = %d\n", i, f);
 		
@@ -62,8 +62,8 @@ int main(int argc, char const *argv[])
 	printf("\nCalculating number of steps...\n");
 	clock_t begin = clock();
 
-	int x = 7;
-	int y = 7;
+	int x = 8;
+	int y = 8;
 	int paths = 0;
 	int steps;
  	#pragma omp parallel for schedule(dynamic) private(steps) reduction(+:paths)

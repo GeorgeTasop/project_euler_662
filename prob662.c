@@ -62,8 +62,8 @@ int main(int argc, char const *argv[])
 	printf("\nCalculating number of steps...\n");
 	clock_t begin = clock();
 
-	int x = 10;
-	int y = 10;
+	int x = 7;
+	int y = 7;
 	int paths = 0;
 	int steps;
  	#pragma omp parallel for schedule(dynamic) private(steps) reduction(+:paths)

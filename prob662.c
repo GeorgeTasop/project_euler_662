@@ -13,8 +13,8 @@ int main(int argc, char const *argv[])
 	int *ind, *end;
 	ind = triads;
 	f = fibbonacci(i);
-	while ( f <= 8){ 	//Gia to (10,10)
-	// while ( f <= 7){ 		// Gia to (3,4)
+	//while ( f <= 8){ 	//Gia to (10,10)
+	while ( f <= 7){ 		// Gia to (3,4)
 		
 		printf("Fibonacci %d = %d\n", i, f);
 		

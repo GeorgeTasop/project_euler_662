@@ -6,6 +6,7 @@ Code in C for Project Euler's Problem 662
 Open a terminal and run the following commands:
 
 git clone https://github.com/GeorgeTasop/project_euler_662.git
+`<addr>`
 cd project_euler_662
 make
 ./prob662

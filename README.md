@@ -4,9 +4,9 @@ Code in C for Project Euler's Problem 662
 
 
 ## How to run this code...Alexiou
-Open a terminal and run the following commands:
+Open your machine with Linux, open a terminal and run the following commands:
 
-`git clone https://github.com/GeorgeTasop/project_euler_662.git`
+`git clone https://github.com/GeorgeTasop/project_euler_662.git`  (you might need to install **git** first)
 
 `cd project_euler_662`
 

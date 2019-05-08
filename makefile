@@ -1,10 +1,10 @@
 CC=gcc
-CFLAGS=-I. -fopenmp
+CFLAGS=-I. -lm -fopenmp
 OBJ = prob662.o
 
-prob: $(OBJ)
+prob662: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 clean: 
 	rm -f *.o
-	rm -f prob
+	rm -f prob662

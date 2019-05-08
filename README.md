@@ -3,10 +3,12 @@ Code in C for Project Euler's Problem 662
 (Still in progress)
 
 
-## How to run this code...Alexiou
+## How to run this code...ALEXiOU
 Open your machine with Linux, open a terminal and run the following commands:
 
-`git clone https://github.com/GeorgeTasop/project_euler_662.git`  (you might need to install **git** first)
+(you might need to install **git** first)
+
+`git clone https://github.com/GeorgeTasop/project_euler_662.git`
 
 `cd project_euler_662`
 

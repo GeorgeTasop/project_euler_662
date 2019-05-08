@@ -8,13 +8,27 @@ void k_from_n(int *end, int *start, int n, int x, int y, int *pp);
 
 int main(int argc, char const *argv[])
 {
-	int i=2, j, k, f;
+	double norm;
+	int i=2, j, k, f, x, y;
 	int triads[300];
 	int *ind, *end;
 	ind = triads;
 	f = fibbonacci(i);
-	while ( f <= 8){ 	//Gia to (10,10)
-	//while ( f <= 7){ 		// Gia to (3,4)
+
+	printf("Hint: run the program 3 times for these 3 points (3,4), (7,7) and (10,10)\n");
+	printf("Give me x = ");
+	scanf("%d", &x);
+	printf("Give me y = ");
+	scanf("%d", &y);
+	
+	norm = sqrt((x*x + y*y));
+	printf("norm(%d,%d) = %f and after integer cast = %d\n\n",x, y, norm, (int)norm);
+	// norm = floor(norm);
+	// printf("norm = %d after integer cast\n",(int) norm);
+	// printf("norm = %f after flooring\n", norm);
+
+	while ( f <= (int)norm){ 	//Gia to (10,10)
+	// while ( f <= 7){ 		// Gia to (3,4)
 		
 		printf("Fibonacci %d = %d\n", i, f);
 		
@@ -37,11 +51,12 @@ int main(int argc, char const *argv[])
 	ind = triads;
 	i=1;
 	int count = 0;
+	printf("\nMatrix with valid steps\n\t");
 	while(*ind != -1){
 		printf("%d ", *ind);
 		ind++;
 		if (i%3==0){
-			printf("\n");
+			printf("\n\t");
 			count++;
 		}
 		i++;
@@ -62,8 +77,8 @@ int main(int argc, char const *argv[])
 	printf("\nCalculating number of steps...\n");
 	clock_t begin = clock();
 
-	int x = 8;
-	int y = 8;
+	// int x = 7;
+	// int y = 7;
 	int paths = 0;
 	int steps;
  	#pragma omp parallel for schedule(dynamic) private(steps) reduction(+:paths)

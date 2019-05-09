@@ -20,3 +20,5 @@ Open your machine with Linux, open a terminal and run the following commands:
 In the delightfull event of the code running **smoothly**, please take a screenshot and send it to me via Telegram.
 
 In the misfortunate event of any **errors** occuring while compiling or running, again, take a screenshot and send me via Telegram.
+
+hihihi

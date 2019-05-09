@@ -16,10 +16,10 @@ int main(int argc, char const *argv[])
 	ind = triads;
 	f = fibbonacci(i);
 
-	printf("Hint: run the program 3 times for these 3 points (3,4), (7,7) and (10,10)\n");
-	printf("Give me x = ");
+	printf("Hint: run the program 3 times for these 3 (x,y) points: (3,4), (7,7), (10,10)\n");
+	printf("x = ");
 	scanf("%d", &x);
-	printf("Give me y = ");
+	printf("y = ");
 	scanf("%d", &y);
 	
 	norm = sqrt((x*x + y*y));

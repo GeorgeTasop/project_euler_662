@@ -12,6 +12,7 @@ int main(int argc, char const *argv[])
 	int i=2, j, k, f, x, y;
 	int triads[300];
 	int *ind, *end;
+
 	ind = triads;
 	f = fibbonacci(i);
 
@@ -23,15 +24,10 @@ int main(int argc, char const *argv[])
 	
 	norm = sqrt((x*x + y*y));
 	printf("norm(%d,%d) = %f and after integer cast = %d\n\n",x, y, norm, (int)norm);
-	// norm = floor(norm);
-	// printf("norm = %d after integer cast\n",(int) norm);
-	// printf("norm = %f after flooring\n", norm);
 
-	while ( f <= (int)norm){ 	//Gia to (10,10)
-	// while ( f <= 7){ 		// Gia to (3,4)
+	while ( f <= (int)norm){
 		
 		printf("Fibonacci %d = %d\n", i, f);
-		
 		for (j=0;j<=f;j++){
 			for (k=0;k<=f;k++){
 				if (k*k + j*j == f*f){
@@ -46,11 +42,14 @@ int main(int argc, char const *argv[])
 		}
 		i++;
 		f = fibbonacci(i);
+
 	}
+
 	*ind = -1;
 	ind = triads;
 	i=1;
 	int count = 0;
+
 	printf("\nMatrix with valid steps\n\t");
 	while(*ind != -1){
 		printf("%d ", *ind);
@@ -92,6 +91,7 @@ int main(int argc, char const *argv[])
 	clock_t end_t = clock();
 	double time_spent = (double)(end_t - begin) / CLOCKS_PER_SEC;
 	printf("\nTime spent: %f\n", time_spent);
+
 	return 0;
 }
 
@@ -121,7 +121,7 @@ void k_from_n(int *end, int *start, int n, int x, int y, int *pp){
 	int p = 0;
 	int sum_x, sum_y;
 
-	//---------Calculating Bounds---------------------------------
+	//---------Calculating Bounds-------------------------------//
 	int upper_bound, lower_bound;
 	upper_bound = (x+y)/n;
 	lower_bound = x + y - n + 1;
@@ -143,14 +143,12 @@ void k_from_n(int *end, int *start, int n, int x, int y, int *pp){
 	// }
 	printf("upper bound = %d, start = %d\n",upper_bound, *start );
 	printf("lower bound = %d\n", lower_bound);
-	//----------------------------------------------------------------
+	//----------------------------------------------------------------//
 
 	for (int a=0; a<n+1; a++) {
-		// indx[a]=end;
 		indx[a]=start;
 	}
 	
-	// while (indx[n]==end){
 	while (indx[n]==start){
 	
 
@@ -162,8 +160,6 @@ void k_from_n(int *end, int *start, int n, int x, int y, int *pp){
 		sum_x = 0;
 		for (int d=0;d<n;d++){
 
-			// sum_x += *indx[d];
-			// sum_y += *(indx[d] - 1);
 			sum_x += *indx[d];
 			sum_y += *(indx[d] + 1);
 			//printf("x[%d]= %d, y[%d]= %d  ",d, *indx[d], d, *(indx[d] + 1) );
@@ -182,18 +178,9 @@ void k_from_n(int *end, int *start, int n, int x, int y, int *pp){
 
 		indx[0] += 3;
 		
-	  	// while(indx[p]==start-2) {
-		// while(indx[p]==end+3) {
-		//printf("mphka sto prwto\n");
-		//printf("*(indx[p] + 2)= %d\n", *(indx[p] + 2));
 		while(*(indx[p] + 2)>lower_bound) {
-			//printf("mphka, p = %d\n", p);
-	    	// indx[p]=end;
-	    	// indx[++p] -= 3;
 	    	indx[p]=start;
 	    	indx[++p] += 3; 
-	    	// if(indx[p]!=start-2) {
-	    	// if(indx[p]!=end+3) {
 	    	if(*(indx[p] + 2)<=lower_bound) {
 	      		p=0;
 	    	}
@@ -202,9 +189,6 @@ void k_from_n(int *end, int *start, int n, int x, int y, int *pp){
 	printf("Thread %d: Path till now = %d\n", omp_get_thread_num(), *pp);
 	
 }
-
-
-
 
 
 int fibbonacci(int n) {
